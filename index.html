@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="A lesson for teenagers and their grown-ups: phone manners, why sent messages never disappear, seeing upsetting content, and when a message becomes a police matter.">
-<meta name="theme-color" content="#09080D">
+<meta name="theme-color" content="#121019">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -315,6 +315,7 @@ body.no-notes .tnote{display:none}
 .scorebar .track{flex:1;height:12px;border-radius:12px;background:var(--line);overflow:hidden}
 .scorebar .track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--yellow));transition:width .4s}
 .score{font-family:var(--mono);font-size:.9rem;min-width:9ch;text-align:right}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50;width:100%;height:100%}
 .help{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .hc{border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px;color:#fff}
 .hc .num{font-family:var(--poster);font-size:1.7rem;font-weight:800;line-height:1.05;user-select:all}
@@ -431,94 +432,14 @@ body.mode-home .class-only,body.mode-home .tnote{display:none!important}
   .names{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-
-/* ===== v6: grown-up restyle for 12–16. Dark all the way down, one accent (+ yellow for highlights),
-   no stickers or pastels. Projector mode (body.big) switches to a light theme, because dark washes out on projectors. ===== */
-:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{
-  color-scheme:dark;
-  --bg:#09080D; --surface:#131219; --surface-2:#1B1A23; --ink:#F2F1F7; --muted:#A09DB0; --line:#262430;
-  --stage:#050408; --stage-2:#111018; --phone:#000; --screen:#17161E; --bubble-in:#26252F;
-  --acc:#8C9BFF; --acc-strong:#5B6CFF; --hi:#FFD23F;
-  --blue:#6F86FF; --violet:#9D86FF; --red:#FF5A67; --green:#3DD68C; --orange:#FF8A4C; --teal:#3DD6B8; --cyan:#5CC3F0; --pink:#FF6BA5;
-  --blue-soft:#171B33; --violet-soft:#1C1830; --red-soft:#2E1418; --green-soft:#0F2A1D; --yellow-soft:#2A2410; --orange-soft:#2B1B12; --teal-soft:#0F2522; --cyan-soft:#0F2230; --pink-soft:#2C1422;
-  --note:#18171F; --note-line:#FFD23F; --note-ink:#FFD23F;
-}
-body.big{
-  color-scheme:light;
-  --bg:#F3F3F6; --surface:#FFFFFF; --surface-2:#F0F0F4; --ink:#0E0D14; --muted:#4A4858; --line:#D8D7E0;
-  --screen:#FFFFFF; --bubble-in:#E8E8EE;
-  --acc:#3440D8; --acc-strong:#3440D8;
-  --blue:#2F4BE0; --violet:#5A3CD8; --red:#C81E30; --green:#0B7A45;
-  --blue-soft:#E6E9FF; --violet-soft:#ECE6FF; --red-soft:#FFE3E6; --green-soft:#DDF3E7; --yellow-soft:#FFF4CC;
-  --note:#FFF8DC; --note-line:#B38A00; --note-ink:#6B5200;
-}
-/* one accent for every part: parts are told apart by number and heading, not colour */
-.c-blue,.c-orange,.c-violet,.c-red,.c-teal,.c-cyan,.c-pink,.c-green,.c-yellow{
-  --accent:var(--acc);--soft:color-mix(in srgb,var(--acc) 8%,var(--surface));--band:var(--acc-strong);--on:#fff}
-body{background:var(--bg)}
-h2{letter-spacing:-.03em}
-.seg{border-radius:14px;border-color:var(--line)}
-.band{background:linear-gradient(180deg,var(--stage-2),var(--stage));border-bottom:1px solid var(--line)}
-.band::before{background-image:none}
-.band .time{background:transparent;color:var(--hi);border:1px solid color-mix(in srgb,var(--hi) 45%,transparent);border-radius:6px}
-.sub > h3{color:var(--ink)}
-.eyebrow{color:var(--muted)}
-.activity .eyebrow,.hnote .lbl{color:var(--acc)}
-/* hero: the Send word is a flat send bubble, not a tilted sticker */
-h1 .btn-word{transform:none;background:var(--acc-strong);box-shadow:none;border-radius:.35em;padding:.02em .28em .08em}
-.hero{background:radial-gradient(80% 110% at 100% 0%,rgba(91,108,255,.22),transparent 60%),var(--stage);border:1px solid var(--line);border-radius:18px}
-/* lesson map and rail: calm cards, accent only on hover and "now" */
-.map a{border-radius:10px;background:var(--surface)}
-.map a .mono{color:var(--muted)}
-.rail{border-radius:12px}
-.rail li a .dot{background:var(--line)}
-.rail li.now a .dot{background:var(--hi)}
-.rail li.now a{background:var(--surface-2)}
-.btn{background:var(--surface-2);border-radius:8px}
-.btn.primary{background:var(--acc-strong)}
-.btn[aria-pressed="true"]{background:var(--surface-2);border-color:var(--hi);color:var(--ink)}
-/* notes: solid edge instead of a dashed yellow sticky note */
-.tnote{border:1px solid var(--line);border-left:3px solid var(--note-line);border-radius:8px;background:var(--note)}
-.hnote{border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:8px;background:var(--surface-2)}
-.activity{border-radius:10px;border:1px solid color-mix(in srgb,var(--acc) 25%,var(--line))}
-/* tiles that used a rainbow of solid colours */
-.live .ico,.callout .ico,.rule .ico,.card-head .num{background:var(--surface-2)!important;color:var(--acc)!important;border:1px solid var(--line)}
-.live,.rule,.card,.stop,.pc,.qrow{border-radius:10px}
-.rule{background:var(--surface-2)}
-.do{background:var(--surface-2)!important;color:var(--ink);border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:10px}
-.hc{background:var(--surface-2)!important;color:var(--ink);border:1px solid var(--line);border-radius:10px}
-.hc .num{color:var(--hi)}
-.hc a{color:var(--acc)}
-body.big .hc .num{color:var(--ink)}
-.stop .ico,.stop .ico.cy{background:var(--surface-2);color:var(--acc);border:1px solid var(--line)}
-.fl.f1,.fl.f2,.fl.f3{background:var(--surface-2);border:1px solid var(--line)}
-.stat{border:1px solid var(--line)}
-.stat .n{color:var(--hi)}
-body.big .stat{background:var(--surface)}
-body.big .stat p{color:var(--muted)}
-body.big .stat .n{color:var(--acc)}
-.flip{border-radius:10px}
-.flip.myth{background:var(--surface-2);border:1px solid var(--line)}
-.flip.myth[aria-pressed="true"]{background:var(--acc-strong)}
-.qk{border-radius:10px}
-.scorebar .track i{background:var(--acc)}
-.u-panel{border-radius:12px}
-/* the family agreement reads as a document, not a sheet of paper stuck on at an angle */
-.paper{background:var(--surface-2);color:var(--ink);transform:none;border:1px solid var(--line);border-radius:10px;box-shadow:none}
-.paper h5{color:var(--acc)}
-.paper .sig{color:var(--muted)}
-.paper .sig span{border-color:var(--muted)}
-.cert{box-shadow:0 0 0 1px var(--line);background:radial-gradient(90% 120% at 100% 0%,rgba(91,108,255,.3),transparent 60%),#0D0C13}
-/* motion: things fade in, nothing bounces */
-@keyframes pop{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-.flip:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
+<canvas id="confetti" aria-hidden="true"></canvas>
 <div class="wrap">
   <header class="hero">
     <div>
-      <p class="eyebrow">A 60-minute lesson · ages 12–16</p>
+      <p class="eyebrow">A 60-minute lesson · ages 12 and up</p>
       <h1 style="margin-top:14px">The <span class="btn-word">Send</span><br>Button</h1>
       <p class="lede">Phone manners, why a message is never really private, what to do when you see something upsetting, and the point where a message becomes a police matter.</p>
       <div class="facts">
@@ -578,7 +499,7 @@ body.big .stat .n{color:var(--acc)}
       <div class="btns class-only">
         <button class="btn primary" id="startBtn" type="button">Start 60-minute clock</button>
         <button class="btn" id="notesBtn" type="button" aria-pressed="true">Teacher notes: shown</button>
-        <button class="btn" id="bigBtn" type="button" aria-pressed="false">Projector mode: off</button>
+        <button class="btn" id="bigBtn" type="button" aria-pressed="false">Projector text: off</button>
       </div>
     </aside>
 
@@ -1075,7 +996,7 @@ body.big .stat .n{color:var(--acc)}
           </aside>
           <aside class="tnote">
             <span class="lbl">Teacher note</span>
-            Run the quiz with the whole class: hands up for true or false, then reveal. End on the four readers, not on the police, so the last thing they take away is something they can use next time their thumb is over the send button. Leave the help numbers on the board while they pack up.
+            Run the quiz with the whole class: hands up for true or false, then reveal. There’s a small celebration if they get 9 or more right. End on the four readers, not on the police, so the last thing they take away is something they can use next time their thumb is over the send button. Leave the help numbers on the board while they pack up.
           </aside>
         </div>
       </section>
