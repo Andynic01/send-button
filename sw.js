@@ -1,5 +1,5 @@
 /* The Send Button: offline support. Built by build.py; version changes with the content. */
-const CACHE = "sendbutton-8ac0954e10", FONTS = "sendbutton-fonts";
+const CACHE = "sendbutton-78cca4a74c", FONTS = "sendbutton-fonts";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "sb-art.js", "sb-app.js", "sb-home.js", "police-car.jpg", "icons/apple-touch-icon.png", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {
