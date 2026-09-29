@@ -16,10 +16,10 @@
     body.classList.toggle("mode-home",m==="home");
     modeBtns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.mode===m?"true":"false")});
     document.querySelector(".rail").setAttribute("aria-label",m==="home"?"Your progress":"Lesson clock");
-    put("sb-mode",m);
   }
-  modeBtns.forEach(function(b){b.addEventListener("click",function(){setMode(b.dataset.mode)})});
-  setMode(get("sb-mode")||document.documentElement.dataset.defaultMode||"class");
+  /* only a mode someone tapped is remembered (the old "sb-mode" key saved the default too, so it is ignored) */
+  modeBtns.forEach(function(b){b.addEventListener("click",function(){setMode(b.dataset.mode);put("sb-mode-picked",b.dataset.mode)})});
+  setMode(get("sb-mode-picked")||document.documentElement.dataset.defaultMode||"class");
 
   /* ---------- progress ---------- */
   var done=getJSON("sb-done",{}),buttons={};
