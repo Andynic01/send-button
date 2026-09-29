@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en-GB" data-default-mode="home">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="A lesson for teenagers and their grown-ups: phone manners, why sent messages never disappear, seeing upsetting content, and when a message becomes a police matter.">
+<meta name="theme-color" content="#121019">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Send Button">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>The Send Button</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Archivo:wdth,wght@62..125,500..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#ECEBF2; --surface:#FFFFFF; --ink:#0F0E17; --muted:#57536B; --line:#D9D6E4;
+  --stage:#121019; --stage-2:#1C1928; --stage-ink:#F4F2FB;
+  --phone:#0F0E17; --screen:#FFFFFF; --bubble-in:#E9E7F1;
+  --blue:#2F5BFF; --orange:#E4580F; --violet:#6D3CF0; --red:#E0263A; --teal:#008F78; --cyan:#0A74B8; --pink:#E0206F; --yellow:#FFD23F; --green:#0F9A5A;
+  --blue-soft:#E2E8FF; --orange-soft:#FFE7DA; --violet-soft:#ECE4FF; --red-soft:#FFE1E4; --teal-soft:#D6F3EC; --cyan-soft:#DDF0FB; --pink-soft:#FFE0EC; --yellow-soft:#FFF4CC; --green-soft:#D9F4E6;
+  --note:#FFF7DA; --note-line:#E0B83A; --note-ink:#7D5A00;
+  --poster:"Unbounded","Archivo Black",system-ui,sans-serif;
+  --display:"Archivo","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0B0A10; --surface:#15131D; --ink:#F4F2FB; --muted:#A7A2BC; --line:#2A2736;
+    --stage:#06050A; --stage-2:#141220;
+    --phone:#000000; --screen:#1D1A28; --bubble-in:#2B2839;
+    --blue:#6B8CFF; --orange:#FF7D3F; --violet:#A07CFF; --red:#FF5566; --teal:#2FD8B8; --cyan:#5CC8F5; --pink:#FF5C9D; --green:#3DDC8A;
+    --blue-soft:#18203F; --orange-soft:#33190C; --violet-soft:#221842; --red-soft:#3A1218; --teal-soft:#0C2E28; --cyan-soft:#0B2636; --pink-soft:#3A1026; --yellow-soft:#332A0C; --green-soft:#0E2E1D;
+    --note:#27210C; --note-line:#6E5B22; --note-ink:#F0C85A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0B0A10; --surface:#15131D; --ink:#F4F2FB; --muted:#A7A2BC; --line:#2A2736;
+  --stage:#06050A; --stage-2:#141220;
+  --phone:#000000; --screen:#1D1A28; --bubble-in:#2B2839;
+  --blue:#6B8CFF; --orange:#FF7D3F; --violet:#A07CFF; --red:#FF5566; --teal:#2FD8B8; --cyan:#5CC8F5; --pink:#FF5C9D; --green:#3DDC8A;
+  --blue-soft:#18203F; --orange-soft:#33190C; --violet-soft:#221842; --red-soft:#3A1218; --teal-soft:#0C2E28; --cyan-soft:#0B2636; --pink-soft:#3A1026; --yellow-soft:#332A0C; --green-soft:#0E2E1D;
+  --note:#27210C; --note-line:#6E5B22; --note-ink:#F0C85A;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:20px;padding-block:0 72px}
+body.big{font-size:20px}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+h1,h2{font-family:var(--poster)}
+h3,h4{font-stretch:112%}
+h2{font-size:clamp(1.55rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+h3{font-size:1.35rem;font-weight:850;letter-spacing:-.01em}
+h4{font-size:1.05rem;font-weight:780}
+p{margin:0}
+a{color:var(--blue);text-underline-offset:2px}
+button{font:inherit;cursor:pointer;color:inherit}
+/* bright green glow on every button (and the button-style lesson map tiles) when hovered */
+button{transition:box-shadow .15s}
+button:not(:disabled):hover,.map a:hover{box-shadow:0 0 0 2px #39FF88,0 0 18px 4px rgba(57,255,136,.55)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:8px}
+.wrap{max-width:1180px;margin-inline:auto}
+.mono{font-family:var(--mono);font-size:.8rem;letter-spacing:.02em}
+.eyebrow{font-family:var(--mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.prose{display:flex;flex-direction:column;gap:12px;max-width:68ch}
+.say{font-size:1.18rem;max-width:62ch}
+
+/* colour worlds */
+.c-blue{--accent:var(--blue);--soft:color-mix(in srgb,var(--blue) 11%,var(--surface));--band:#4F7CFF;--on:#fff}
+.c-orange{--accent:var(--orange);--soft:color-mix(in srgb,var(--orange) 11%,var(--surface));--band:#FF6B2C;--on:#120A04}
+.c-violet{--accent:var(--violet);--soft:color-mix(in srgb,var(--violet) 11%,var(--surface));--band:#8B5CFF;--on:#fff}
+.c-red{--accent:var(--red);--soft:color-mix(in srgb,var(--red) 11%,var(--surface));--band:#FF3B4E;--on:#fff}
+.c-teal{--accent:var(--teal);--soft:color-mix(in srgb,var(--teal) 11%,var(--surface));--band:#14C8A8;--on:#04201A}
+.c-cyan{--accent:var(--cyan);--soft:color-mix(in srgb,var(--cyan) 11%,var(--surface));--band:#38BDF8;--on:#04121A}
+.c-pink{--accent:var(--pink);--soft:color-mix(in srgb,var(--pink) 11%,var(--surface));--band:#FF3D8B;--on:#fff}
+.c-green{--accent:var(--green);--soft:color-mix(in srgb,var(--green) 11%,var(--surface));--band:#2FD37E;--on:#04201A}
+.c-yellow{--accent:var(--note-ink);--soft:color-mix(in srgb,var(--yellow) 18%,var(--surface));--band:#FFD23F;--on:#120A04}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;margin-block:20px 12px;padding:clamp(24px,4vw,48px);border-radius:24px;background:radial-gradient(90% 120% at 0% 0%,rgba(79,124,255,.28),transparent 55%),radial-gradient(80% 100% at 100% 100%,rgba(255,61,139,.22),transparent 60%),var(--stage);color:var(--stage-ink);overflow:hidden}
+.hero .eyebrow{color:#FFD23F}
+h1{font-size:clamp(2.5rem,6.4vw,5rem);font-weight:900;letter-spacing:-.035em;line-height:.95;color:#fff}
+h1 .btn-word{display:inline-block;background:linear-gradient(135deg,#4F7CFF,#8B5CFF);color:#fff;padding:.04em .3em .1em;border-radius:999px;transform:rotate(-3deg);margin-top:.1em;box-shadow:0 0 0 3px #06050A,0 0 0 5px #FFD23F,0 16px 40px -10px rgba(79,124,255,.8)}
+.hero .lede{font-size:1.22rem;color:rgba(244,242,251,.75);max-width:36ch;margin-top:22px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{font-family:var(--mono);font-size:.78rem;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff}
+.chip b{color:#FFD23F}
+.hero-art svg{width:100%;height:auto;max-width:540px;display:block;margin-inline:auto}
+.flow{animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-28}}
+.pop{animation:pop .5s cubic-bezier(.2,1.4,.4,1) both;transform-box:fill-box;transform-origin:center}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+.flash rect{animation:flash 4s 1.4s infinite}
+@keyframes flash{0%,92%,100%{opacity:0}94%{opacity:.85}}
+.beacon{animation:beacon 1.2s steps(2) infinite}
+@keyframes beacon{50%{filter:hue-rotate(160deg)}}
+.rays{animation:rays 1.2s ease-in-out infinite}
+@keyframes rays{50%{opacity:.2}}
+.ring{animation:ring 3s linear infinite}
+@keyframes ring{from{stroke-dashoffset:0}to{stroke-dashoffset:415}}
+
+/* map of the lesson */
+.map{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-block:4px 32px}
+.map a{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none;transition:transform .15s,background .15s,color .15s}
+.map a:hover .mono{color:inherit}
+.map a:hover{transform:translateY(-3px);background:var(--band);color:var(--on);border-color:var(--band)}
+.map a .mono{color:var(--accent);font-weight:500}
+.map a b{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:1rem;line-height:1.15}
+
+/* layout */
+.layout{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 14px);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.clock{font-family:var(--poster);font-weight:800;letter-spacing:-.02em;font-size:2.1rem;font-variant-numeric:tabular-nums;line-height:1}
+.clock-sub{font-size:.85rem;color:var(--muted)}
+.bar{height:8px;border-radius:8px;background:var(--line);overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+.rail ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.rail li a{display:grid;grid-template-columns:12px 44px 1fr;gap:8px;align-items:center;padding:7px 8px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.9rem;line-height:1.25}
+.rail li a .dot{width:10px;height:10px;border-radius:50%;background:var(--band)}
+.rail li a .mono{color:var(--muted);font-size:.72rem}
+.rail li a:hover{background:var(--bg)}
+.rail li.now a{background:var(--soft);font-weight:700}
+.btns{display:flex;flex-direction:column;gap:8px}
+.btn{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:9px 12px;font-size:.9rem;text-align:left}
+.btn.primary{background:linear-gradient(135deg,#4F7CFF,#8B5CFF);color:#fff;border-color:transparent;font-weight:700}
+.btn[aria-pressed="true"]{background:var(--note);border-color:var(--note-line)}
+
+main{display:flex;flex-direction:column;gap:32px;min-width:0;counter-reset:part}
+main > .seg:not(#after):not(#sources):not(#finish){counter-increment:part}
+.seg{background:var(--surface);border-radius:20px;overflow:hidden;scroll-margin-top:14px;border:1px solid var(--line)}
+.band{background:radial-gradient(110% 150% at 100% 0%,color-mix(in srgb,var(--band) 60%,transparent),transparent 58%),linear-gradient(180deg,var(--stage-2),var(--stage));color:#fff;display:grid;grid-template-columns:1fr 220px;gap:20px;align-items:center;padding:28px clamp(20px,4vw,40px);position:relative;overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:14px 14px;pointer-events:none}
+.band > *{position:relative}
+.band .time{font-family:var(--mono);font-size:.78rem;display:inline-block;background:var(--band);color:var(--on);padding:4px 11px;border-radius:999px;margin-bottom:14px;font-weight:500}
+.seg:not(#after):not(#finish) .band .time::before{content:"Part " counter(part) " · "}
+.band h2{color:#fff}
+.band .kick{font-size:1.1rem;margin-top:12px;max-width:46ch;color:rgba(255,255,255,.78)}
+.band-art svg{width:100%;height:auto;display:block}
+.body{padding:30px clamp(20px,4vw,40px) 34px;display:flex;flex-direction:column;gap:22px}
+.sub{display:flex;flex-direction:column;gap:12px}
+.sub > h3{color:var(--accent)}
+
+.tnote{background:var(--note);border:2px dashed var(--note-line);border-radius:12px;padding:14px 18px;font-size:.95rem}
+.tnote .lbl{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;display:block;margin-bottom:6px;color:var(--note-ink);font-weight:500}
+.tnote ul{margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+body.no-notes .tnote{display:none}
+.activity{background:var(--soft);border-radius:14px;padding:16px 20px;display:flex;flex-direction:column;gap:6px}
+.activity .eyebrow{color:var(--accent);font-weight:500}
+
+/* unsend machine */
+.unsend{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:24px;align-items:stretch}
+.u-phone{background:var(--phone);border-radius:34px;padding:10px}
+.u-screen{background:var(--screen);border-radius:26px;padding:14px 12px 12px;display:flex;flex-direction:column;gap:10px;min-height:420px}
+.u-top{display:flex;align-items:center;justify-content:space-between;padding:2px 6px 10px;border-bottom:1px solid var(--line)}
+.u-top b{font-family:var(--display)}
+.u-thread{display:flex;flex-direction:column;gap:7px;flex:1}
+.b{max-width:84%;padding:8px 12px;border-radius:18px;font-size:.93rem;line-height:1.35}
+.b small{display:block;font-family:var(--mono);font-size:.66rem;opacity:.7}
+.b.in{background:var(--bubble-in);align-self:flex-start;border-bottom-left-radius:6px}
+.b.out{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:6px;animation:pop .35s cubic-bezier(.2,1.4,.4,1) both}
+.b.gone{background:transparent;border:1px dashed var(--line);color:var(--muted);font-style:italic}
+.u-status{align-self:flex-end;font-family:var(--mono);font-size:.68rem;color:var(--muted);text-align:right;display:flex;flex-direction:column;gap:2px}
+.u-status .warn{color:var(--red)}
+.u-compose{display:flex;gap:8px;align-items:flex-end}
+.u-compose textarea{flex:1;resize:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:18px;padding:9px 12px;font:inherit;font-size:.9rem;line-height:1.35;height:64px}
+.u-send{width:44px;height:44px;border-radius:50%;border:0;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
+.u-send:disabled{opacity:.35;cursor:default}
+.u-panel{background:var(--soft);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.u-count{font-family:var(--poster);font-weight:800;font-size:clamp(3rem,8vw,4.6rem);line-height:.9;color:var(--accent);font-variant-numeric:tabular-nums}
+.u-log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.93rem;min-height:120px}
+.u-log li{display:grid;grid-template-columns:58px 1fr;gap:8px;animation:pop .3s both}
+.u-log li .mono{color:var(--muted);padding-top:2px}
+.u-log li.bad span:last-child{color:var(--red);font-weight:700}
+.u-btns{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:0;border-radius:999px;padding:10px 18px;font-weight:700;background:var(--ink);color:var(--bg)}
+.pill.red{background:var(--red);color:#fff}
+.pill.ghost{background:transparent;border:2px solid var(--line);color:var(--ink)}
+.pill:disabled{opacity:.35;cursor:default}
+
+.timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;position:relative}
+.timeline li{display:grid;grid-template-columns:62px 22px 1fr;gap:10px;padding-bottom:14px;position:relative}
+.timeline li::before{content:"";position:absolute;left:83px;top:14px;bottom:0;width:2px;background:var(--line)}
+.timeline li:last-child::before{display:none}
+.timeline .mono{color:var(--muted);padding-top:3px}
+.timeline .pt{width:14px;height:14px;border-radius:50%;background:var(--accent);margin-top:6px;margin-left:4px;position:relative;z-index:1}
+
+/* rules tiles */
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.rule{border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start;background:var(--soft)}
+.rule .ico{width:52px;height:52px;border-radius:14px;background:var(--band);color:var(--on);display:grid;place-items:center}
+.rule .ico svg{width:32px;height:32px}
+.rule h4{margin-bottom:4px}
+.rule p{font-size:.95rem;color:var(--muted)}
+.rule .n{font-family:var(--mono);font-size:.72rem;color:var(--accent)}
+
+.quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.qk{border:2px solid var(--line);background:var(--surface);border-radius:12px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:8px;min-height:120px}
+.qk .verdict{font-family:var(--display);font-weight:800;font-size:1.1rem}
+.qk.rude{border-color:var(--red);background:var(--red-soft)} .qk.rude .verdict{color:var(--red)}
+.qk.fine{border-color:var(--green);background:var(--green-soft)} .qk.fine .verdict{color:var(--green)}
+.qk .why{font-size:.88rem;color:var(--muted)}
+
+/* flip cards */
+.flips{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.flip{border:0;border-radius:14px;padding:18px;text-align:left;min-height:170px;display:flex;flex-direction:column;gap:8px;position:relative;transition:transform .25s}
+.flip:hover{transform:rotate(-1deg) translateY(-2px)}
+.flip .tag{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;opacity:.8}
+.flip .front,.flip .back{display:flex;flex-direction:column;gap:8px}
+.flip .back{display:none}
+.flip[aria-pressed="true"] .front{display:none}
+.flip[aria-pressed="true"] .back{display:flex;animation:pop .3s both}
+.flip .big{font-family:var(--display);font-weight:800;font-size:1.15rem;line-height:1.2}
+.flip .hint{margin-top:auto;font-family:var(--mono);font-size:.7rem;opacity:.7}
+.flip.myth{background:var(--violet-soft);color:var(--ink)}
+.flip.myth[aria-pressed="true"]{background:var(--violet);color:#fff}
+.flip.myth .big s{text-decoration-line:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(123,77,255,.55)}
+.flip.crime{background:var(--surface);border:2px solid var(--line);color:var(--ink)}
+.flip.crime[aria-pressed="true"]{background:var(--stage);border-color:var(--stage);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.flip.crime .cat{align-self:flex-start;border-radius:999px;padding:3px 10px;font-family:var(--mono);font-size:.7rem;color:#fff}
+.flip-all{align-self:flex-start}
+
+.lives{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.live{border-radius:14px;padding:16px;background:var(--bg);display:flex;flex-direction:column;gap:6px;border:1px solid var(--line)}
+.live .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#fff}
+.live .ico svg{width:28px;height:28px}
+.live p{font-size:.92rem;color:var(--muted)}
+
+.chain{display:grid;grid-template-columns:260px 1fr;gap:22px;background:var(--soft);border-radius:16px;padding:20px}
+.chain label{display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.chain input[type=range]{width:100%;accent-color:var(--violet)}
+.reach{font-family:var(--poster);font-size:clamp(2.6rem,6vw,3.8rem);font-weight:800;font-variant-numeric:tabular-nums;line-height:1;color:var(--accent)}
+.reach-sub{color:var(--muted);font-size:.95rem}
+.dots-wrap{background:var(--surface);border-radius:12px;padding:10px;min-height:220px;display:flex;flex-direction:column;gap:6px}
+#dots{width:100%;height:220px;display:block}
+.dots-key{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.callout{border-radius:14px;padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.callout .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#fff}
+.callout .ico svg{width:28px;height:28px}
+
+/* police */
+.agebox{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--red-soft);border-radius:16px;padding:18px 22px}
+.agebox .n{font-family:var(--poster);font-size:clamp(4rem,10vw,6rem);font-weight:800;line-height:.85;color:var(--red)}
+.agebox p{font-size:1.05rem}
+.cat-threat{background:#D92D35}.cat-bully{background:#E8307F}.cat-image{background:#7B4DFF}.cat-lies{background:#C25E00}.cat-danger{background:#00806D}
+.sextort{border:3px solid var(--red);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px;background:linear-gradient(135deg,var(--red-soft),var(--surface) 70%)}
+.sextort .eyebrow{color:var(--red);font-weight:500}
+.dos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.do{border-radius:12px;padding:14px;color:#fff;display:flex;flex-direction:column;gap:4px}
+.do b{font-family:var(--display);font-size:1.15rem;line-height:1.15}
+.do span{font-size:.88rem;opacity:.95}
+.journey{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;counter-reset:j}
+.stop{background:var(--bg);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;position:relative;border:1px solid var(--line)}
+.stop .ico{width:52px;height:52px;border-radius:14px;background:var(--stage);color:#fff;display:grid;place-items:center}
+.stop .ico svg{width:30px;height:30px}
+.stop b{font-family:var(--display);font-size:1.05rem}
+.stop p{font-size:.9rem;color:var(--muted)}
+.onside{background:var(--green-soft);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.onside h3{color:var(--green)}
+.onside ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.never{background:var(--red);color:#fff;border-radius:12px;padding:14px 18px;font-weight:700;font-size:1.02rem}
+
+/* scenarios */
+.scen{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;background:var(--bg);border:1px solid var(--line)}
+.card-head{display:flex;align-items:center;gap:10px}
+.card-head .num{width:34px;height:34px;border-radius:50%;background:var(--band);color:var(--on);display:grid;place-items:center;font-family:var(--poster);font-weight:800;font-size:.85rem;flex:none}
+.card-head h4{font-size:1.1rem}
+.chat{background:var(--screen);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px;border:1px solid var(--line)}
+.chat .who{font-family:var(--mono);font-size:.68rem;color:var(--muted);text-align:center;padding-bottom:4px;border-bottom:1px solid var(--line);margin-bottom:2px}
+.msg{display:flex;gap:6px;align-items:flex-end}
+.msg.me{justify-content:flex-end}
+.msg .av{width:26px;height:26px;flex:none}
+.msg .av svg{width:26px;height:26px;display:block}
+.msg .b{max-width:80%;font-size:.88rem;animation:none}
+.msg .b.alert{background:var(--red);color:#fff}
+.sys{font-family:var(--mono);font-size:.68rem;color:var(--red);text-align:center}
+.ctx{font-size:.95rem}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{border:2px solid var(--line);background:var(--surface);border-radius:14px;padding:10px 14px;text-align:left;display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;font-size:.95rem}
+.opt .l{width:24px;height:24px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:.8rem}
+.opt:hover{border-color:var(--accent)}
+.opt.picked.best{border-color:var(--green);background:var(--green-soft)}
+.opt.picked.meh{border-color:#E0A100;background:var(--yellow-soft)}
+.opt.picked.bad{border-color:var(--red);background:var(--red-soft)}
+.opt.picked.best .l{background:var(--green);color:#fff}.opt.picked.meh .l{background:#E0A100;color:#1A1204}.opt.picked.bad .l{background:var(--red);color:#fff}
+.fb{border-radius:14px;padding:12px 14px;font-size:.93rem}
+.fb.best{background:var(--green-soft)}.fb.meh{background:var(--yellow-soft)}.fb.bad{background:var(--red-soft)}
+.fb .tag{font-family:var(--display);font-weight:800;display:block;margin-bottom:2px}
+.fb.best .tag{color:var(--green)}.fb.meh .tag{color:var(--note-ink)}.fb.bad .tag{color:var(--red)}
+
+/* close */
+.readers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.reader{display:flex;flex-direction:column;gap:6px}
+.reader svg{width:100%;height:auto;display:block}
+.reader .mono{color:var(--accent)}
+.reader p{font-size:.92rem;color:var(--muted)}
+.quiz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.qrow{border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;background:var(--bg);border:1px solid var(--line)}
+.qrow .tf{display:flex;gap:8px}
+.qrow .tf button{flex:1;border:0;border-radius:12px;padding:9px;font-weight:700;font-family:var(--display);font-size:1rem}
+.qrow .tf .t{background:var(--green-soft);color:var(--green)}
+.qrow .tf .f{background:var(--red-soft);color:var(--red)}
+.qrow .tf button:disabled{opacity:.45;cursor:default}
+.qrow .tf button.chosen{opacity:1;outline:3px solid currentColor}
+.qrow .ans{font-size:.92rem;border-radius:12px;padding:8px 12px}
+.qrow .ans.ok{background:var(--green-soft)}.qrow .ans.no{background:var(--red-soft)}
+.scorebar{display:flex;align-items:center;gap:12px}
+.scorebar .track{flex:1;height:12px;border-radius:12px;background:var(--line);overflow:hidden}
+.scorebar .track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--yellow));transition:width .4s}
+.score{font-family:var(--mono);font-size:.9rem;min-width:9ch;text-align:right}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50;width:100%;height:100%}
+.help{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hc{border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px;color:#fff}
+.hc .num{font-family:var(--poster);font-size:1.7rem;font-weight:800;line-height:1.05;user-select:all}
+.hc .num.sm{font-size:1.25rem}
+.hc p{font-size:.9rem;opacity:.95}
+.hc a{color:#fff;font-weight:700}
+.hc.h1{background:#D92D35}.hc.h2{background:#1F4FD8}.hc.h3{background:#00806D}.hc.h4{background:#7B4DFF}.hc.h5{background:#C2185B}.hc.h6{background:#B35400}
+
+/* after */
+.agree{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.agree fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.agree legend{font-family:var(--display);font-weight:800;font-size:1.05rem;margin-bottom:6px;color:var(--accent)}
+.agree label{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start;font-size:.95rem;padding:6px 8px;border-radius:10px}
+.agree label:hover{background:var(--bg)}
+.agree input{accent-color:var(--violet);width:18px;height:18px;margin-top:3px}
+.agree-picks{display:flex;flex-direction:column;gap:18px}
+.paper{background:#FFFDF6;color:#1B1B25;border-radius:6px;padding:26px 26px 22px;box-shadow:0 18px 40px -24px rgba(20,26,46,.5);transform:rotate(.6deg);display:flex;flex-direction:column;gap:12px;position:sticky;top:20px}
+.paper h4{font-size:1.4rem;font-family:var(--display)}
+.paper h5{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;margin:6px 0 0;color:#6B5AA6}
+.paper ul{margin:0;padding-left:20px;font-size:.95rem;display:flex;flex-direction:column;gap:3px}
+.paper .sig{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;font-family:var(--mono);font-size:.72rem;color:#666}
+.paper .sig span{border-top:1.5px solid #999;padding-top:4px}
+.copy-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.copied{font-family:var(--mono);font-size:.8rem;color:var(--green)}
+.parents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pc{border-radius:14px;padding:16px 18px;background:var(--bg);border:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.pc h4{color:var(--accent)}
+.pc p{font-size:.95rem;color:var(--muted)}
+.follow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fl{border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;color:var(--ink)}
+.fl .mono{opacity:.8}
+.fl ol{margin:0;padding-left:18px;font-size:.92rem;display:flex;flex-direction:column;gap:3px}
+.fl.f1{background:var(--blue-soft)}.fl.f2{background:var(--teal-soft)}.fl.f3{background:var(--orange-soft)}
+.gloss{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin:0}
+.gloss div{padding:10px 0;border-bottom:1px solid var(--line)}
+.gloss dt{font-family:var(--display);font-weight:800}
+.gloss dd{margin:2px 0 0;font-size:.93rem;color:var(--muted)}
+.sources ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.foot{font-size:.85rem;color:var(--muted);max-width:74ch}
+.cat-drugs{background:#0A74B8}
+/* modes: classroom (teacher-led) and together at home (grown-up + child) */
+body:not(.mode-home) .home-only{display:none!important}
+body.mode-home .class-only,body.mode-home .tnote{display:none!important}
+.modes{margin-top:26px;display:flex;flex-direction:column;gap:10px;max-width:540px}
+.modes-lbl{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:#FFD23F}
+.modes-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mode{position:relative;display:grid;grid-template-columns:auto 1fr;column-gap:12px;row-gap:2px;align-items:center;text-align:left;padding:14px 40px 14px 14px;border-radius:14px;border:2px solid rgba(255,255,255,.4);background:rgba(255,255,255,.07);color:#fff;transition:background .15s,border-color .15s,transform .15s}
+.mode:hover{border-color:#fff;background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.mode-ico{grid-row:1 / 3;width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.14);display:grid;place-items:center}
+.mode-ico svg{width:26px;height:26px}
+.mode-t{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:1rem;line-height:1.15}
+.mode-d{font-size:.82rem;line-height:1.3;color:rgba(255,255,255,.72)}
+.mode-tick{position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.55);display:grid;place-items:center;font-size:.8rem;font-weight:800;color:transparent}
+.mode[aria-pressed="true"]{background:#fff;border-color:#FFD23F;color:#06050A;box-shadow:0 0 0 4px rgba(255,210,63,.3)}
+.mode[aria-pressed="true"] .mode-d{color:#57536B}
+.mode[aria-pressed="true"] .mode-ico{background:linear-gradient(135deg,#4F7CFF,#8B5CFF);color:#fff}
+.mode[aria-pressed="true"] .mode-tick{background:#FFD23F;border-color:#FFD23F;color:#06050A}
+@media (max-width:460px){.mode{grid-template-columns:1fr;padding:12px 34px 12px 12px}.mode-ico{grid-row:auto;width:34px;height:34px;margin-bottom:6px}.mode-ico svg{width:22px;height:22px}}
+.install{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:.92rem;color:rgba(244,242,251,.8)}
+.install .pill{background:#FFD23F;color:#06050A}
+.hnote{background:var(--soft);border:2px solid var(--accent);border-radius:12px;padding:14px 18px;font-size:.95rem}
+.hnote .lbl{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;display:block;margin-bottom:6px;color:var(--accent);font-weight:500}
+.hnote ul{margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.done-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding-top:6px;border-top:1px solid var(--line)}
+.done-btn{border:2px solid var(--accent);background:transparent;color:var(--ink);border-radius:999px;padding:11px 20px;font-weight:700;font-family:var(--display);font-stretch:112%}
+.done-btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.done-row a{font-size:.92rem;font-weight:700;color:var(--accent)}
+.prog-n{font-family:var(--poster);font-weight:800;font-size:2.1rem;line-height:1;letter-spacing:-.02em}
+.prog-bar{height:8px;border-radius:8px;background:var(--line);overflow:hidden}
+.prog-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#4F7CFF,#8B5CFF,#FF3D8B);transition:width .4s}
+.rail li.done a .dot{background:var(--green);box-shadow:0 0 0 3px color-mix(in srgb,var(--green) 30%,transparent)}
+.rail li.done a>span:last-child{text-decoration:line-through;text-decoration-color:var(--muted)}
+.names{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px}
+.names label{display:flex;flex-direction:column;gap:6px;font-size:.92rem;font-weight:700}
+.names input{font:inherit;font-weight:400;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.todo{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.cert{position:relative;max-width:560px;border-radius:18px;padding:28px 26px 24px;color:#fff;overflow:hidden;background:radial-gradient(100% 120% at 100% 0%,rgba(139,92,255,.55),transparent 60%),radial-gradient(90% 100% at 0% 100%,rgba(255,61,139,.4),transparent 60%),#121019;display:flex;flex-direction:column;gap:10px;box-shadow:0 0 0 3px #06050A,0 0 0 5px #FFD23F}
+.cert .eyebrow{color:#FFD23F}
+.cert h3{font-family:var(--poster);font-size:clamp(1.4rem,4vw,1.9rem);color:#fff;letter-spacing:-.02em;font-stretch:normal}
+.cert .who{font-size:1.15rem}
+.cert .meta{display:flex;flex-wrap:wrap;gap:8px}
+.cert .meta span{font-family:var(--mono);font-size:.78rem;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16)}
+.cert .promise{font-size:.95rem;color:rgba(255,255,255,.82)}
+.cert.locked{filter:grayscale(1);opacity:.55}
+.sextort.drugs{border-color:var(--orange);background:linear-gradient(135deg,var(--orange-soft),var(--surface) 70%)}
+.sextort.drugs .eyebrow{color:var(--orange)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.stat{border-radius:14px;padding:16px 18px;background:var(--stage);color:#fff;display:flex;flex-direction:column;gap:6px}
+.stat .n{font-family:var(--poster);font-weight:800;font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1;color:#38BDF8;letter-spacing:-.02em}
+.stat p{font-size:.92rem;color:rgba(255,255,255,.78)}
+.stop .ico.cy{background:#0A74B8}
+.hc.h7{background:#0A74B8}.hc.h8{background:#6D3CF0}.hc.h9{background:#008F78}.hc.h10{background:#C2185B}.hc.h11{background:#4A4560}.hc.h12{background:#B35400}
+
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .hero-art svg{max-width:420px}
+  .layout{grid-template-columns:1fr}
+  .rail{position:static}
+  .map{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .unsend,.chain,.agree{grid-template-columns:1fr}
+  .paper{position:static}
+  .dos,.journey,.readers{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:1fr}
+  .lives,.follow,.help,.quick{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:620px){
+  body{padding-inline:16px;font-size:16px}
+  .band{grid-template-columns:1fr}
+  .band-art{max-width:200px}
+  .map{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rules,.scen,.quiz,.parents,.gloss,.lives,.follow,.help,.quick,.dos,.journey{grid-template-columns:1fr}
+  .readers{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .agebox{grid-template-columns:1fr}
+  .names{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">A 60-minute lesson · ages 12 and up</p>
+      <h1 style="margin-top:14px">The <span class="btn-word">Send</span><br>Button</h1>
+      <p class="lede">Phone manners, why a message is never really private, what to do when you see something upsetting, and the point where a message becomes a police matter.</p>
+      <div class="facts">
+        <span class="chip"><b>60</b> minutes, 7 timed parts</span>
+        <span class="chip"><b>9</b> real-life situations</span>
+        <span class="chip"><b>16</b> offences explained</span>
+        <span class="chip class-only">Teacher notes built in</span>
+        <span class="chip home-only">Notes for the grown-up built in</span>
+      </div>
+      <div class="modes" role="group" aria-labelledby="modesLbl">
+        <p class="modes-lbl" id="modesLbl">Choose how you’re using it</p>
+        <div class="modes-row">
+          <button class="mode" type="button" data-mode="class" aria-pressed="true"><span class="mode-ico" data-icon="talk"></span><span class="mode-t">In a classroom</span><span class="mode-d">Lesson clock and teacher notes</span><span class="mode-tick" aria-hidden="true">✓</span></button>
+          <button class="mode" type="button" data-mode="home" aria-pressed="false"><span class="mode-ico" data-icon="home"></span><span class="mode-t">Together at home</span><span class="mode-d">A grown-up and a teenager, side by side</span><span class="mode-tick" aria-hidden="true">✓</span></button>
+        </div>
+      </div>
+      <div class="install" id="installBox" hidden></div>
+    </div>
+    <div class="hero-art" data-art="hero"></div>
+  </header>
+
+  <nav class="map" aria-label="The seven parts of the lesson">
+    <a href="#hook" class="c-blue"><span class="mono">00–05</span><b>Before you press send</b></a>
+    <a href="#manners" class="c-orange"><span class="mono">05–14</span><b>Phone manners</b></a>
+    <a href="#forever" class="c-violet"><span class="mono">14–24</span><b>Sent means out there</b></a>
+    <a href="#police" class="c-red"><span class="mono">24–36</span><b>When police get involved</b></a>
+    <a href="#upsetting" class="c-cyan"><span class="mono">36–44</span><b>Seeing something upsetting</b></a>
+    <a href="#scenarios" class="c-teal"><span class="mono">44–54</span><b>What would you do?</b></a>
+    <a href="#close" class="c-pink"><span class="mono">54–60</span><b>Four readers + quiz</b></a>
+  </nav>
+
+  <div class="layout">
+    <aside class="rail" aria-label="Lesson clock">
+      <div class="class-only" style="display:flex;flex-direction:column;gap:12px">
+        <p class="eyebrow">Lesson clock</p>
+        <div class="clock" id="clock">00:00</div>
+        <p class="clock-sub" id="clockSub">Press start once the class is settled.</p>
+        <div class="bar" id="bar" aria-hidden="true"></div>
+      </div>
+      <div class="home-only" style="display:flex;flex-direction:column;gap:10px">
+        <p class="eyebrow">Your progress</p>
+        <div class="prog-n" id="progN">0 / 7</div>
+        <div class="prog-bar" aria-hidden="true"><i id="progBar"></i></div>
+        <p class="clock-sub">Saved on this phone, so you can stop and carry on later. Two sittings is fine.</p>
+      </div>
+      <ol id="railList">
+        <li class="c-blue" data-start="0" data-end="5"><a href="#hook"><span class="dot"></span><span class="mono">00–05</span><span>Before you press send</span></a></li>
+        <li class="c-orange" data-start="5" data-end="14"><a href="#manners"><span class="dot"></span><span class="mono">05–14</span><span>Phone manners</span></a></li>
+        <li class="c-violet" data-start="14" data-end="24"><a href="#forever"><span class="dot"></span><span class="mono">14–24</span><span>Sent means out there</span></a></li>
+        <li class="c-red" data-start="24" data-end="36"><a href="#police"><span class="dot"></span><span class="mono">24–36</span><span>When police get involved</span></a></li>
+        <li class="c-cyan" data-start="36" data-end="44"><a href="#upsetting"><span class="dot"></span><span class="mono">36–44</span><span>Seeing something upsetting</span></a></li>
+        <li class="c-teal" data-start="44" data-end="54"><a href="#scenarios"><span class="dot"></span><span class="mono">44–54</span><span>What would you do?</span></a></li>
+        <li class="c-pink" data-start="54" data-end="60"><a href="#close"><span class="dot"></span><span class="mono">54–60</span><span>Four readers + quiz</span></a></li>
+        <li class="c-yellow home-only" data-start="99" data-end="99"><a href="#finish"><span class="dot"></span><span class="mono">end</span><span>Finish together</span></a></li>
+        <li class="c-green" data-start="99" data-end="99"><a href="#after"><span class="dot"></span><span class="mono">after</span><span>Home, parents, follow-ups</span></a></li>
+      </ol>
+      <div class="btns class-only">
+        <button class="btn primary" id="startBtn" type="button">Start 60-minute clock</button>
+        <button class="btn" id="notesBtn" type="button" aria-pressed="true">Teacher notes: shown</button>
+        <button class="btn" id="bigBtn" type="button" aria-pressed="false">Projector text: off</button>
+      </div>
+    </aside>
+
+    <main>
+      <!-- 1 HOOK -->
+      <section class="seg c-blue" id="hook">
+        <div class="band">
+          <div>
+            <span class="time">00:00 – 05:00</span>
+            <h2>Before you press send</h2>
+            <p class="kick">You have about three seconds between typing a message and sending it. That’s the only time it belongs to you.</p>
+          </div>
+          <div class="band-art" data-art="hook"></div>
+        </div>
+        <div class="body">
+          <div class="sub">
+            <h3>The Unsend Machine</h3>
+            <p>Press send, then try to take it back. Watch what happens to the copies.</p>
+            <div class="unsend">
+              <div class="u-phone">
+                <div class="u-screen">
+                  <div class="u-top"><b>the lads 🔒</b><span class="mono">6 members</span></div>
+                  <div class="u-thread" id="uThread" aria-live="polite">
+                    <div class="b in"><small>Ollie</small>did u see what maya posted 💀</div>
+                    <div class="b in"><small>Reece</small>cringe</div>
+                  </div>
+                  <div class="u-compose">
+                    <label for="uText" class="mono" hidden>Message</label>
+                    <textarea id="uText" aria-label="Message to send">she’s actually so embarrassing, she shouldn’t even bother coming in tomorrow</textarea>
+                    <button class="u-send" id="uSend" type="button" aria-label="Send">
+                      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 11 L21 3 L14 21 L11 13 Z" fill="currentColor"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="u-panel">
+                <p class="eyebrow">Copies out there</p>
+                <div class="u-count" id="uCount">0</div>
+                <ul class="u-log" id="uLog"><li><span class="mono">--:--</span><span>Nothing sent yet. The message is still yours.</span></li></ul>
+                <div class="u-btns">
+                  <button class="pill red" id="uDelete" type="button" disabled>Delete for everyone</button>
+                  <button class="pill ghost" id="uReset" type="button">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sub">
+            <h3>What happened to Kai</h3>
+            <ol class="timeline">
+              <li><span class="mono">21:47</span><span class="pt"></span><span>Kai, 13, sends that message to a private group of six mates. To him it’s a throwaway comment.</span></li>
+              <li><span class="mono">21:47</span><span class="pt"></span><span>Reece screenshots it. He isn’t trying to cause trouble. He thinks it’s funny.</span></li>
+              <li><span class="mono">21:48</span><span class="pt"></span><span>Kai has second thoughts and deletes it for everyone. The screenshot is already in a group of 31.</span></li>
+              <li><span class="mono">07:30</span><span class="pt"></span><span>Maya sees it before school. So does her mum.</span></li>
+              <li><span class="mono">09:15</span><span class="pt"></span><span>Her mum sends the screenshot to the head of year. It has Kai’s name and the time on it.</span></li>
+            </ol>
+            <p class="foot">Kai and Maya are made up, but this happens in schools every week.</p>
+          </div>
+
+          <div class="activity class-only">
+            <span class="eyebrow">Ask the class · 2 min</span>
+            <p><b>At what moment could Kai have stopped all of this?</b> Take three answers.</p>
+            <p>The class should get to this: only before he pressed send. Deleting it, saying sorry, saying “it was a joke” – none of it gets the message back.</p>
+          </div>
+          <div class="activity home-only">
+            <span class="eyebrow">Talk · 2 min</span>
+            <p>Grown-up first: tell a short, true story about a message you wish you hadn’t sent. It makes it much easier for them to be honest.</p>
+            <p>Then ask each other: <b>at what moment could Kai have stopped all of this?</b> The answer is only before he pressed send. Deleting it, saying sorry, saying “it was a joke”: none of it gets the message back.</p>
+          </div>
+          <aside class="hnote home-only">
+            <span class="lbl">For the grown-up</span>
+            <ul>
+              <li><b>Before you start,</b> skim the whole lesson on your own (about 20 minutes). It covers nudes, sextortion, drugs and violent videos, and it’s better if nothing surprises you.</li>
+              <li><b>Say this at the start:</b> “Whatever you tell me today, you won’t be in trouble for telling me.” Then keep to it.</li>
+              <li><b>Don’t ask for stories about their friends.</b> Let them volunteer. If they say “someone in my year did that”, ask what happened next, not who.</li>
+              <li><b>Doing it in two sittings is fine:</b> parts 1 to 4, then 5 to 7. Progress saves on this phone.</li>
+            </ul>
+          </aside>
+          <aside class="tnote">
+            <span class="lbl">Teacher note</span>
+            Put the Unsend Machine on the board and let a student press Send, then Delete. The copy counter keeps going after the delete, and that’s the point. Read Kai’s timeline aloud, then ask the question.
+            <ul>
+              <li><b>Before the lesson:</b> check with your Designated Safeguarding Lead (DSL) whether anyone in the room is involved in a current online incident.</li>
+              <li><b>Don’t ask for real stories.</b> In a class of 30, someone will have been Maya.</li>
+              <li><b>Say at the start:</b> “If anything today worries you, talk to me or [DSL name] afterwards.” Don’t promise secrecy. You can’t keep it if a child is at risk.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 2 MANNERS -->
+      <section class="seg c-orange" id="manners">
+        <div class="band">
+          <div>
+            <span class="time">05:00 – 14:00</span>
+            <h2>Phone manners</h2>
+            <p class="kick">Nearly all phone manners come from one idea: the person in front of you, or on the other end, is a real person.</p>
+          </div>
+          <div class="band-art" data-art="manners"></div>
+        </div>
+        <div class="body">
+          <div class="rules" id="rules"></div>
+          <div class="sub">
+            <h3>Rude or fine?</h3>
+            <p class="class-only">Read each one out, and the class shouts “rude” or “fine”. Then tap the card to reveal the answer.</p>
+            <p class="home-only">Read each one out and both say “rude” or “fine” at the same time. Then tap the card to see who was right.</p>
+            <div class="quick" id="quick"></div>
+          </div>
+          <div class="sub">
+            <h3>Keep your phone yours</h3>
+            <p>Phone theft isn’t about manners, but it happens in public, so it belongs here. About 71,000 phones were stolen in London in 2025. Across England and Wales, around 200 people a day have a phone or bag snatched.</p>
+            <div class="lives">
+              <div class="live"><span class="ico" style="background:#E06A10" data-icon="kerb"></span><h4>Step back from the road</h4><p>Snatchers on bikes and e-bikes grab phones from people standing at the edge of the pavement. Stand back, and look up when you cross.</p></div>
+              <div class="live"><span class="ico" style="background:#2F5BFF" data-icon="lock"></span><h4>Lock it properly</h4><p>Use a passcode, not just a swipe. Turn on Stolen Device Protection on an iPhone, or Theft Detection Lock on Android.</p></div>
+              <div class="live"><span class="ico" style="background:#6D3CF0" data-icon="number"></span><h4>Know your IMEI</h4><p>Dial *#06# to see your phone’s IMEI number. Write it down somewhere that isn’t your phone, and register it at immobilise.com.</p></div>
+              <div class="live"><span class="ico" style="background:#008F78" data-icon="pin"></span><h4>Set up tracking now</h4><p>Turn on your phone’s find-and-lock feature before you need it. After it’s stolen is too late.</p></div>
+              <div class="live"><span class="ico" style="background:#D92D35" data-icon="heart"></span><h4>Never chase or fight</h4><p>No phone is worth getting hurt for. Let it go and get somewhere safe.</p></div>
+              <div class="live"><span class="ico" style="background:#1F4FD8" data-icon="report"></span><h4>If it’s taken</h4><p>Call 999 if it has just happened or you’re hurt, otherwise 101 or report online. Lock it remotely, and ask your network to block it using the IMEI.</p></div>
+            </div>
+          </div>
+          <div class="activity class-only">
+            <span class="eyebrow">Pairs · 3 min</span>
+            <p>Pick the <b>one rule people your age break most</b>, and the <b>one adults break most</b>. Take a show of hands. Adults are usually worst at rules 1 and 2, and the class will enjoy saying so.</p>
+          </div>
+          <div class="activity home-only">
+            <span class="eyebrow">Be honest · 3 min</span>
+            <p>Each of you picks the <b>rule people your age break most</b>, and the <b>rule the grown-up breaks most</b>. The grown-up has to accept the answer. Then dial <b>*#06#</b> on both phones and write down your IMEI numbers.</p>
+          </div>
+          <aside class="hnote home-only">
+            <span class="lbl">For the grown-up</span>
+            <ul>
+              <li><b>Rules 1 and 2 are about you too.</b> Let them tell you which rules you break, and don’t argue.</li>
+              <li><b>Phone theft:</b> check that both phones have a passcode and theft protection switched on before you move on.</li>
+            </ul>
+          </aside>
+          <aside class="tnote">
+            <span class="lbl">Teacher note</span>
+            Rule 9 comes from the JCQ exam rules: having a phone or smartwatch in the exam room is malpractice, even if it’s switched off. DfE guidance from February 2024 also expects schools to ban phones for the whole school day, so link this to your own school’s policy. The phone theft box takes about a minute: read the six tiles, then ask who knows their IMEI number. Hardly anyone will. Figures: Mayor of London (Feb 2026) for London, and the Crime Survey for England and Wales (year to March 2024) for the “200 a day”. Keep this part light and quick. The heavier material is coming, and it lands better once the class is warmed up.
+          </aside>
+        </div>
+      </section>
+
+      <!-- 3 FOREVER -->
+      <section class="seg c-violet" id="forever">
+        <div class="band">
+          <div>
+            <span class="time">14:00 – 24:00</span>
+            <h2>Sent means out there</h2>
+            <p class="kick">Apps make messages feel private and temporary. They are neither.</p>
+          </div>
+          <div class="band-art" data-art="forever"></div>
+        </div>
+        <div class="body">
+          <div class="sub">
+            <h3>Five myths. Tap to bust them.</h3>
+            <div class="flips" id="myths"></div>
+          </div>
+
+          <div class="sub">
+            <h3>Where your message goes</h3>
+            <p>When you press send, the message doesn’t live in one place. It can end up in all of these:</p>
+            <div class="lives" id="lives"></div>
+          </div>
+
+          <div class="sub">
+            <h3>How far can one screenshot travel?</h3>
+            <div class="chain">
+              <div style="display:flex;flex-direction:column;gap:16px">
+                <label for="gsize">People in each group chat: <b id="gsizeV">30</b>
+                  <input type="range" id="gsize" min="3" max="60" value="30">
+                </label>
+                <label for="hops">Times it gets forwarded on: <b id="hopsV">2</b>
+                  <input type="range" id="hops" min="1" max="4" value="2">
+                </label>
+                <div aria-live="polite">
+                  <div class="reach" id="reach">900</div>
+                  <p class="reach-sub" id="reachSub">people could see it.</p>
+                </div>
+              </div>
+              <div class="dots-wrap">
+                <canvas id="dots" aria-hidden="true"></canvas>
+                <span class="dots-key" id="dotsKey">Each dot is 1 person</span>
+              </div>
+            </div>
+            <p class="foot">This is the most it could reach, because lots of people are in the same chats. The real number is usually smaller, but nobody knows how much smaller, including the person who sent it.</p>
+          </div>
+
+          <div class="sub">
+            <h3>Who might see it later?</h3>
+            <div class="prose">
+              <p>Your <b>digital footprint</b> is everything online that links back to you, including what other people post about you. Employers and sports clubs often look people up. Colleges and universities sometimes do. And if a message ever becomes evidence, it gets printed out and read aloud in a room you’ll wish you weren’t in.</p>
+            </div>
+            <div class="callout" style="background:var(--violet-soft)">
+              <span class="ico" style="background:var(--violet)" data-icon="eye"></span>
+              <div class="prose">
+                <h4>Fake pictures count too</h4>
+                <p>AI apps can turn an ordinary photo into a fake nude, or make it look like someone said something they never said. In law, a fake sexual image of anyone under 18 is treated the same as a real one: both are child abuse images. Making one “for a laugh” is a serious crime.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sub">
+            <h3>Check before you share</h3>
+            <p>Forwarding a fake doesn’t feel like doing anything. But when a lie goes round, everyone who passed it on helped it travel. Full Fact, the UK fact-checking charity, uses the first three questions below.</p>
+            <div class="lives">
+              <div class="live"><span class="ico" style="background:#6D3CF0" data-icon="source"></span><h4>Where’s it from?</h4><p>Who first posted it? A news site you’ve heard of, or an account that appeared last week?</p></div>
+              <div class="live"><span class="ico" style="background:#E0206F" data-icon="eyeoff"></span><h4>What’s missing?</h4><p>A short clip can cut out what happened before and after. Ask what you’re not being shown.</p></div>
+              <div class="live"><span class="ico" style="background:#D92D35" data-icon="heart"></span><h4>How do you feel?</h4><p>If it makes you furious or scared, slow down. Fakes are made to make you share before you think.</p></div>
+              <div class="live"><span class="ico" style="background:#E06A10" data-icon="clockback"></span><h4>Check the date</h4><p>Old videos get reposted as if they happened today, often after a big news story.</p></div>
+              <div class="live"><span class="ico" style="background:#008F78" data-icon="check"></span><h4>Find it somewhere else</h4><p>If it’s real and big, trusted news sites will have it too. A reverse image search shows where a picture first appeared.</p></div>
+              <div class="live"><span class="ico" style="background:#2F5BFF" data-icon="robot"></span><h4>Could it be AI?</h4><p>AI can fake voices, videos and screenshots. Strange hands, mouths that don’t match the words, or a voice that sounds flat are clues.</p></div>
+            </div>
+            <div class="callout" style="background:var(--violet-soft)">
+              <span class="ico" style="background:var(--violet)" data-icon="scales"></span>
+              <div class="prose">
+                <h4>Posts can end in prison</h4>
+                <p>After the riots in summer 2024, people were jailed for posts that stirred up hatred. One man was jailed for 3 months for a fake TikTok live claiming rioters were chasing him. Posting something you know is false to cause serious harm is the offence of false communications.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity class-only">
+            <span class="eyebrow">Class · 3 min</span>
+            <p>Move the sliders on the board. Start with a group of 6 and one forward, then try a group of 30 and two forwards. Ask: <b>“Kai sent it to six people. How many saw it?”</b></p>
+          </div>
+          <div class="activity home-only">
+            <span class="eyebrow">Try it · 3 min</span>
+            <p>Set the first slider to the size of the biggest group chat you’re really in, with one forward. Then try two forwards. Ask: <b>“Kai sent it to six people. How many saw it?”</b> Then pick the one check in “Check before you share” you’d actually use.</p>
+          </div>
+          <aside class="hnote home-only">
+            <span class="lbl">For the grown-up</span>
+            <ul>
+              <li><b>Use their real chats.</b> Asking “how big is your biggest group chat?” makes the slider land much harder than the example numbers.</li>
+              <li><b>The AI point matters.</b> A lot of teenagers believe a fake nude “doesn’t count”. It does, and it’s being done in UK schools.</li>
+            </ul>
+          </aside>
+          <aside class="tnote">
+            <span class="lbl">Teacher note</span>
+            This part covers the <i>Online reputation</i> and <i>Privacy and security</i> strands of UKCIS <i>Education for a Connected World</i>. Childnet and ProjectEVOLVE both have free follow-up activities on digital footprints. “Check before you share” adds about two minutes: the first three questions come from the Full Fact toolkit (fullfact.org/toolkit). The riot cases are Dimitrie Stoica (false communications, Online Safety Act 2023 s179) and several adults jailed for stirring up racial hatred online. Don’t skip the AI point: “nudify” apps are being used in UK schools, and pupils often believe a fake doesn’t count. It does.
+          </aside>
+        </div>
+      </section>
+
+      <!-- 4 POLICE -->
+      <section class="seg c-red" id="police">
+        <div class="band">
+          <div>
+            <span class="time">24:00 – 36:00</span>
+            <h2>When police get involved</h2>
+            <p class="kick">Some messages aren’t just unkind. They are crimes. Being young doesn’t stop the police being called, and “it was a joke” is not a defence.</p>
+          </div>
+          <div class="band-art" data-art="police"></div>
+        </div>
+        <div class="body">
+          <div class="agebox">
+            <span class="n">10</span>
+            <p><b>This is the age of criminal responsibility in England, Wales and Northern Ireland.</b> From your 10th birthday, you can be arrested, interviewed and charged. In Scotland the age is 12. <span class="class-only">Everyone in this room is over the line.</span><span class="home-only">If you’re reading this, you’re over the line.</span></p>
+          </div>
+
+          <div class="sub">
+            <h3>Things people your age do that are crimes</h3>
+            <p>Each card says what someone did. Tap it to see what the law calls it.</p>
+            <button class="pill ghost flip-all" id="flipAll" type="button">Flip all cards</button>
+            <div class="flips" id="crimes"></div>
+          </div>
+
+          <div class="sextort drugs">
+            <span class="eyebrow">Drugs and vapes on Snapchat</span>
+            <h3>Dealers in your DMs</h3>
+            <div class="prose">
+              <p>Dealers advertise on Snapchat and other apps, using emoji menus and stories that disappear. In a survey of 16 to 24-year-olds, about 1 in 4 had seen drugs advertised on social media, and more than half of those saw them on Snapchat.</p>
+              <p>What they sell often isn’t what they say. Researchers at the University of Bath tested vapes confiscated in schools. About 1 in 6 contained spice, a synthetic drug that has left pupils collapsing at school. Only about 1 in 100 actually contained the THC (the drug in cannabis) they were sold as.</p>
+              <p>Ordinary vapes from these sellers aren’t safe either. Tests on vapes taken off pupils at one school found some with more than twice the safe level of lead. Selling nicotine vapes to anyone under 18 is illegal, and from 29 October 2026 that covers all vapes. Disposable vapes have been banned since June 2025.</p>
+            </div>
+            <div class="dos">
+              <div class="do" style="background:#B35400"><b>Don’t buy from an account</b><span>You don’t know what’s in it, and there’s nobody to complain to if it goes wrong.</span></div>
+              <div class="do" style="background:#D92D35"><b>Easy money is a trap</b><span>Gangs use social media to recruit children, some as young as 11, to carry drugs. This is called county lines.</span></div>
+              <div class="do" style="background:#1F4FD8"><b>Someone collapses? Call 999</b><span>Tell them what the person took, if you know. Getting help fast matters more than getting in trouble.</span></div>
+              <div class="do" style="background:#00806D"><b>Report it without your name</b><span>Fearless.org lets you report crime anonymously. FRANK (0300 123 6600) answers questions about drugs, day or night.</span></div>
+            </div>
+          </div>
+
+          <div class="sextort">
+            <span class="eyebrow">A warning from the National Crime Agency</span>
+            <h3>The sextortion scam</h3>
+            <div class="prose">
+              <p>Criminal gangs, often based abroad, set up fake accounts pretending to be a girl or boy your age. They flirt, send a picture that isn’t really them, and ask for one back. As soon as they have it, they demand money or gift cards. If you don’t pay, they threaten to send the picture to your friends and family.</p>
+              <p>It happens to thousands of young people in the UK, most often boys aged 14 to 18. <b>If it happens to you, you are the victim of a crime. You are not in trouble.</b></p>
+            </div>
+            <div class="dos">
+              <div class="do" style="background:#D92D35"><b>Don’t pay</b><span>Paying almost never ends it. They just ask for more.</span></div>
+              <div class="do" style="background:#1F4FD8"><b>Stop replying and block</b><span>Don’t argue or bargain with them.</span></div>
+              <div class="do" style="background:#7B4DFF"><b>Don’t delete anything</b><span>Keep the messages and their profile name. It’s evidence.</span></div>
+              <div class="do" style="background:#00806D"><b>Tell someone now</b><span>A trusted adult, CEOP or the police. Report Remove can get the picture taken down.</span></div>
+            </div>
+          </div>
+
+          <div class="sub">
+            <h3>What actually happens when police get involved</h3>
+            <div class="journey" id="journey"></div>
+            <p>Police records can come up years later, for example on the enhanced background checks (DBS checks) needed to work with children, in healthcare, or in the police. Schools add their own consequences as well, up to permanent exclusion.</p>
+          </div>
+
+          <div class="onside">
+            <h3>The law is on your side too</h3>
+            <p>Every law on those cards also protects <b>you</b>. If any of it happens to you, it isn’t your fault, and you don’t have to put up with it.</p>
+            <ul>
+              <li><b>Don’t reply.</b> Block them, then report it on the app.</li>
+              <li><b>Keep evidence</b> of threats and abuse: screenshots that show the username, the date and the time.</li>
+              <li><b>Tell an adult you trust:</b> a parent, a teacher, or Childline if there’s nobody else.</li>
+              <li><b>Call 999</b> if someone is in danger right now. <b>Call 101</b> to report something that isn’t an emergency.</li>
+            </ul>
+            <p class="never">One exception: never screenshot, save or forward a nude of anyone under 18, not even as evidence. That is itself a crime. Leave it where it is and tell an adult straight away.</p>
+          </div>
+
+          <aside class="hnote home-only">
+            <span class="lbl">For the grown-up</span>
+            <ul>
+              <li><b>This is the heaviest part.</b> Keep your voice level. The aim is “know where the line is”, not “be scared of the police”.</li>
+              <li><b>If they ask about something a friend did,</b> answer the question about what happened, and don’t push for the name.</li>
+              <li><b>Say the sextortion sentence out loud:</b> “If anyone ever blackmails you with a picture, come to me. You won’t be in trouble, and we’ll sort it together.”</li>
+              <li><b>If something serious comes out,</b> stay calm and thank them. Don’t delete anything, and don’t look at any image. Contact CEOP or the police, and let their school’s safeguarding lead know.</li>
+            </ul>
+          </aside>
+          <aside class="tnote">
+            <span class="lbl">Teacher note</span>
+            <ul>
+              <li><b>Tone:</b> you want the class to take this seriously, not to panic. Say this line plainly: <i>“Police don’t want to criminalise children for mistakes. That’s why this lesson exists: so you don’t make them.”</i></li>
+              <li><b>Short of time?</b> Flip six cards: threats, harassment, the nude, sharing without consent, AirDrop, and the fight. Then do sextortion. Don’t drop sextortion.</li>
+              <li><b>Nudes of under-18s</b> are illegal even when both people are 16 and agree. The College of Policing lets forces record these as “Outcome 21”: the crime is logged, but no further action is taken because it isn’t in the public interest. Guidance says these shouldn’t show up on DBS checks, but police can’t promise they never will. So don’t say “it’s nothing to worry about”, and don’t say “you’ll get a criminal record” either.</li>
+              <li><b>If something is disclosed:</b> follow UKCIS <i>Sharing nudes and semi-nudes: advice for education settings</i>. Never view, copy, print or forward the image, and never ask a pupil to show it to you. Go straight to the DSL.</li>
+              <li><b>Sextortion:</b> the NCA sent an alert to every UK school in April 2024. The four steps in this lesson follow the NCA’s own advice.</li>
+              <li><b>Drugs and vapes:</b> the survey is Volteface (2019, 2,006 people aged 16–24). The spice figures are from the University of Bath’s tests on vapes confiscated in schools (2024, and a 2025 follow-up that found about 1 in 4 in London and Lancashire). The lead figures come from a 2023 BBC test of vapes from one school. If a pupil says they’re being asked to carry or sell anything, that’s criminal exploitation: go to the DSL.</li>
+              <li><b>Check before teaching:</b> the Crime and Policing Act 2026 creates a new offence of child criminal exploitation (s48), but it was not yet in force in September 2026. The rule that all vapes are 18+ starts on 29 October 2026.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 5 UPSETTING -->
+      <section class="seg c-cyan" id="upsetting">
+        <div class="band">
+          <div>
+            <span class="time">36:00 – 44:00</span>
+            <h2>Seeing something upsetting</h2>
+            <p class="kick">Fights, cruelty, gore, porn. Most people your age see things online they never went looking for. It isn’t your fault, and you can do a lot about it.</p>
+          </div>
+          <div class="band-art" data-art="upsetting"></div>
+        </div>
+        <div class="body">
+          <div class="sub">
+            <h3>You didn’t go looking for it</h3>
+            <p>Ofcom found that children first come across violent content online while they’re still at primary school. Most of it turned up by accident: in big group chats, in posts from strangers in their feed, or because the algorithm pushed it at them. Fights at local schools and in the street were some of the most common.</p>
+            <div class="stats">
+              <div class="stat"><span class="n">Primary</span><p>The age most children first see violent content online, usually by accident (Ofcom, 2024).</p></div>
+              <div class="stat"><span class="n">13</span><p>The average age people first saw porn. Half had seen it by then (Children’s Commissioner, 2023).</p></div>
+              <div class="stat"><span class="n">1 in 10</span><p>Had seen porn by the age of 9. A lot of it showed violence, which isn’t what real relationships are like.</p></div>
+            </div>
+            <p>Since July 2025 the law has made apps and websites protect under-18s from porn, and from content about suicide and self-harm, including age checks on porn sites. It doesn’t catch everything, so you still need to know what to do.</p>
+          </div>
+
+          <div class="sub">
+            <h3>What to do in the moment</h3>
+            <div class="journey">
+              <div class="stop"><span class="ico cy" data-icon="eyeoff"></span><span class="mono">Step 1</span><b>Look away, close it</b><p>You don’t have to finish watching. Swipe away, close the app, put the phone down.</p></div>
+              <div class="stop"><span class="ico cy" data-icon="flag"></span><span class="mono">Step 2</span><b>Report it</b><p>Every app has a report button. The person who posted it isn’t told who reported them.</p></div>
+              <div class="stop"><span class="ico cy" data-icon="pause"></span><span class="mono">Step 3</span><b>Don’t send it on</b><p>Not even to say “this is awful”. Every share is more harm to the person in it and their family, and some things, like sexual images of under-18s or terrorist videos, are illegal to share.</p></div>
+              <div class="stop"><span class="ico cy" data-icon="heart"></span><span class="mono">Step 4</span><b>Tell someone</b><p>A parent, a teacher, or Childline on 0800 1111. Saying it out loud helps it stop going round your head.</p></div>
+            </div>
+          </div>
+
+          <div class="sub">
+            <h3>Train your feed</h3>
+            <p>The algorithm notices what you stop on, even if you hated it, and shows you more of it. You can push back.</p>
+            <div class="rules">
+              <div class="rule c-cyan"><span class="ico" data-icon="pause"></span><div><h4>Don’t linger</h4><p>Watching to the end, watching again or reading the comments all tell the app you want more.</p></div></div>
+              <div class="rule c-cyan"><span class="ico" data-icon="eyeoff"></span><div><h4>Tap “Not interested”</h4><p>Press and hold the post, choose Not interested, and the app shows you less like it.</p></div></div>
+              <div class="rule c-cyan"><span class="ico" data-icon="flag"></span><div><h4>Filter words out</h4><p>Most apps let you hide words and hashtags from your feed and comments. Add the ones that upset you.</p></div></div>
+              <div class="rule c-cyan"><span class="ico" data-icon="clockback"></span><div><h4>Reset your feed</h4><p>TikTok’s “Refresh your For You feed” and Instagram’s “Reset suggested content” wipe what the app has learned about you and start again.</p></div></div>
+            </div>
+          </div>
+
+          <div class="callout" style="background:var(--cyan-soft)">
+            <span class="ico" style="background:var(--cyan)" data-icon="heart"></span>
+            <div class="prose">
+              <h4>If it’s stuck in your head</h4>
+              <p>Feeling shaky, sick, angry or unable to sleep after seeing something horrible is normal, and it usually fades. If it doesn’t, or if something online has made you think about hurting yourself, talk to someone today: Childline on 0800 1111, Samaritans on 116 123, or text SHOUT to 85258.</p>
+            </div>
+          </div>
+
+          <div class="activity class-only">
+            <span class="eyebrow">Pairs · 2 min</span>
+            <p>At lunch, a mate holds out their phone: <b>“You have to see this fight.”</b> What could you say to get out of watching without making it weird? Take three answers.</p>
+            <p>Good ones are short and don’t lecture: “Nah, I’m good.” “Is he OK though?” “Report it, man.”</p>
+          </div>
+          <div class="activity home-only">
+            <span class="eyebrow">Practise · 2 min</span>
+            <p>The grown-up plays the mate at lunch: <b>“You have to see this fight.”</b> The teenager practises a way out that doesn’t sound weird. Then swap.</p>
+            <p>Good ones are short and don’t lecture: “Nah, I’m good.” “Is he OK though?” “Report it, man.”</p>
+          </div>
+          <aside class="hnote home-only">
+            <span class="lbl">For the grown-up</span>
+            <ul>
+              <li><b>Don’t ask them to show you anything.</b> Ask “Have you ever seen something you wish you hadn’t?” and accept “yes” as a full answer.</li>
+              <li><b>Then do “Train your feed” together</b> on the app they use most. It takes two minutes and they keep the skill.</li>
+            </ul>
+          </aside>
+          <aside class="tnote">
+            <span class="lbl">Teacher note</span>
+            <ul>
+              <li><b>Don’t show or describe examples.</b> Some pupils will have seen very distressing things, possibly involving people they know. Remind the class that they don’t need to say what they’ve seen.</li>
+              <li><b>If something is disclosed,</b> especially self-harm, abuse or a pupil being filmed, follow your usual procedure and go to the DSL.</li>
+              <li><b>Sources:</b> Ofcom, <i>Encountering violent online content starts at primary school</i> (March 2024). Children’s Commissioner, <i>“A lot of it is actually just abuse”</i> (January 2023, survey of over 1,000 people aged 16–21). The Online Safety Act child safety duties and age checks came into force on 25 July 2025.</li>
+              <li><b>If an app ignores a report,</b> pupils can go to Report Harmful Content. Terrorist or extremist material can be reported anonymously at gov.uk/report-terrorism.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 6 SCENARIOS -->
+      <section class="seg c-teal" id="scenarios">
+        <div class="band">
+          <div>
+            <span class="time">44:00 – 54:00</span>
+            <h2>What would you do?</h2>
+            <p class="kick"><span class="class-only">Nine real-life situations. The class votes A, B or C, and then you tap to see what happens.</span><span class="home-only">Nine real-life situations. You each pick A, B or C, then tap to see what happens.</span></p>
+          </div>
+          <div class="band-art" data-art="scenarios"></div>
+        </div>
+        <div class="body">
+          <button class="pill ghost" id="showAll" type="button" style="align-self:flex-start">Show every answer</button>
+          <div class="scen" id="scen"></div>
+          <aside class="hnote home-only">
+            <span class="lbl">For the grown-up</span>
+            <ul>
+              <li><b>You both pick an answer before you tap.</b> You’ll disagree on some, and those are the best conversations in the whole lesson.</li>
+              <li><b>Short of time?</b> Do 1, 3, 6, 7 and 9.</li>
+            </ul>
+          </aside>
+          <aside class="tnote">
+            <span class="lbl">Teacher note</span>
+            In 10 minutes you’ll get through about five. If you’re short of time, do 1, 3, 6, 7 and 9: group-chat bullying, a nude going round, grooming, sextortion, and the dealer account. Take a hands-up vote on A, B and C before you reveal. Scenario 6 uses the grooming warning signs from CEOP Education’s 11–18 material: an adult pretending to be a teenager, moving the chat to another app, and asking for secrecy.
+          </aside>
+        </div>
+      </section>
+
+      <!-- 7 CLOSE -->
+      <section class="seg c-pink" id="close">
+        <div class="band">
+          <div>
+            <span class="time">54:00 – 60:00</span>
+            <h2>The four readers test</h2>
+            <p class="kick">Before you send anything you’re not sure about, picture four people reading it. If any of them would make you wince, don’t send it.</p>
+          </div>
+          <div class="band-art" data-art="close"></div>
+        </div>
+        <div class="body">
+          <div class="readers">
+            <div class="reader"><span data-reader="0"></span><span class="mono">Reader 1</span><h4>The person it’s about</h4><p>They’ll see it in the end. Picture their face now.</p></div>
+            <div class="reader"><span data-reader="1"></span><span class="mono">Reader 2</span><h4>Your family</h4><p>Your parent, carer or nan, reading over your shoulder.</p></div>
+            <div class="reader"><span data-reader="2"></span><span class="mono">Reader 3</span><h4>A future boss</h4><p>Someone deciding whether to give you the job, the place or the team spot.</p></div>
+            <div class="reader"><span data-reader="3"></span><span class="mono">Reader 4</span><h4>A police officer</h4><p>Reading it off a printout with your name and the time at the top.</p></div>
+          </div>
+
+          <div class="sub">
+            <h3>Exit quiz: true or false?</h3>
+            <div class="scorebar"><div class="track"><i id="scoreFill"></i></div><span class="score" id="score" aria-live="polite">0 of 12</span></div>
+            <div class="quiz" id="quiz"></div>
+          </div>
+
+          <div class="sub">
+            <h3>Who to contact</h3>
+            <div class="help">
+              <div class="hc h1"><span class="num">999</span><p>Someone is in danger right now.</p></div>
+              <div class="hc h2"><span class="num">101</span><p>Report a crime to the police when it isn’t an emergency.</p></div>
+              <div class="hc h3"><span class="num">0800 1111</span><p>Childline. Free and confidential for anyone under 19, and it won’t show on the phone bill. You can also get help at childline.org.uk.</p></div>
+              <div class="hc h4"><span class="num sm">Report Remove</span><p>Get a nude of yourself taken down if you’re under 18. <a href="https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/report-remove/" target="_blank" rel="noopener">Childline Report Remove</a></p></div>
+              <div class="hc h5"><span class="num sm">CEOP</span><p>An adult is contacting you in a sexual way, or someone is blackmailing you. <a href="https://www.ceop.police.uk/Safety-Centre/" target="_blank" rel="noopener">ceop.police.uk</a></p></div>
+              <div class="hc h6"><span class="num sm">Report Harmful Content</span><p>An app won’t take something harmful down. <a href="https://reportharmfulcontent.com/" target="_blank" rel="noopener">reportharmfulcontent.com</a></p></div>
+              <div class="hc h7"><span class="num">116 123</span><p>Samaritans. Free, day or night, for anyone who is struggling or thinking about hurting themselves.</p></div>
+              <div class="hc h8"><span class="num sm">Text SHOUT to 85258</span><p>Free, confidential text support, day or night, if you’d rather type than talk.</p></div>
+              <div class="hc h9"><span class="num sm">FRANK 0300 123 6600</span><p>Honest answers about drugs and vapes, day or night. You can also text 82111. <a href="https://www.talktofrank.com/" target="_blank" rel="noopener">talktofrank.com</a></p></div>
+              <div class="hc h10"><span class="num sm">Fearless</span><p>Report a crime, like a dealer account, without giving your name. <a href="https://crimestoppers-uk.org/fearless" target="_blank" rel="noopener">crimestoppers-uk.org/fearless</a></p></div>
+              <div class="hc h11"><span class="num sm">Report terrorism</span><p>Terrorist or extremist videos and posts, reported anonymously. <a href="https://www.gov.uk/report-terrorism" target="_blank" rel="noopener">gov.uk/report-terrorism</a></p></div>
+              <div class="hc h12"><span class="num sm">Stolen phone</span><p>999 if it’s just happened or you’re hurt, otherwise 101. Then ask your network to block it using the IMEI.</p></div>
+            </div>
+          </div>
+          <aside class="hnote home-only">
+            <span class="lbl">For the grown-up</span>
+            <ul>
+              <li><b>Do the quiz separately and compare scores.</b> Grown-ups don’t always win.</li>
+              <li><b>Then scroll to “Finish together”</b> for your certificate, and build the family phone agreement below it.</li>
+            </ul>
+          </aside>
+          <aside class="tnote">
+            <span class="lbl">Teacher note</span>
+            Run the quiz with the whole class: hands up for true or false, then reveal. There’s a small celebration if they get 9 or more right. End on the four readers, not on the police, so the last thing they take away is something they can use next time their thumb is over the send button. Leave the help numbers on the board while they pack up.
+          </aside>
+        </div>
+      </section>
+
+      <!-- FINISH (together at home) -->
+      <section class="seg c-yellow home-only" id="finish">
+        <div class="band">
+          <div>
+            <span class="time">Finish together</span>
+            <h2>You did it</h2>
+            <p class="kick">Mark each part done as you go. When all seven are finished, your certificate unlocks here.</p>
+          </div>
+          <div class="band-art" data-art="finish"></div>
+        </div>
+        <div class="body">
+          <div class="names">
+            <label for="childName">Teenager’s first name<input id="childName" type="text" autocomplete="off" maxlength="30" placeholder="e.g. Sam"></label>
+            <label for="adultName">Grown-up’s name<input id="adultName" type="text" autocomplete="off" maxlength="30" placeholder="e.g. Mum"></label>
+          </div>
+          <p class="foot">Names stay on this phone. Nothing is sent anywhere.</p>
+          <div id="finishTodo"></div>
+          <div class="cert locked" id="cert"></div>
+          <p class="foot" id="certHint">Take a screenshot of the certificate to keep it.</p>
+          <div class="done-row" style="border-top:0">
+            <button class="pill ghost" id="resetProgress" type="button">Start again</button>
+            <span class="copied" id="resetMsg" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- AFTER -->
+      <section class="seg c-green" id="after">
+        <div class="band">
+          <div>
+            <span class="time">After the lesson</span>
+            <h2>Take it home</h2>
+            <p class="kick">A phone agreement to make with your family, a guide for parents, three follow-up lessons, and the words to know.</p>
+          </div>
+          <div class="band-art" data-art="after"></div>
+        </div>
+        <div class="body">
+          <div class="sub">
+            <h3>Build a family phone agreement</h3>
+            <p>Tick the ones your family agrees to. The agreement writes itself on the right. Copy it and stick it on the fridge.</p>
+            <div class="agree">
+              <div class="agree-picks" id="agreePicks"></div>
+              <div>
+                <div class="paper" id="paper"></div>
+                <div class="copy-row" style="margin-top:14px">
+                  <button class="pill" id="copyAgree" type="button">Copy the agreement</button>
+                  <span class="copied" id="copied" aria-live="polite"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sub">
+            <h3>For parents and carers</h3>
+            <div class="parents">
+              <div class="pc"><h4>Don’t punish them for telling you</h4><p>If taking the phone away is what happens when they report something, they’ll stop reporting. Thank them for telling you first, and deal with the rest later.</p></div>
+              <div class="pc"><h4>Talk about sextortion before it happens</h4><p>Tell them straight out: “If anyone ever blackmails you with a picture, come to me. You won’t be in trouble, and we’ll sort it together.” Children who’ve heard that sentence are far more likely to ask for help.</p></div>
+              <div class="pc"><h4>Keep phones out of bedrooms at night</h4><p>Charge them downstairs. It helps sleep, and most of the worst messages get sent late at night.</p></div>
+              <div class="pc"><h4>Watch for changes</h4><p>Watch for being secretive, jumpy when a notification comes in, suddenly deleting apps, a new “friend” you’ve never heard of, or asking for money or gift cards.</p></div>
+              <div class="pc"><h4>Don’t look at the image</h4><p>If there’s a nude involved, don’t view, copy or forward it, even to the school. Tell the school’s DSL or the police what you know, and let them handle the image.</p></div>
+              <div class="pc"><h4>If they’ve seen something horrible</h4><p>Stay calm and don’t ask them to show you. Ask how they feel, not just what they saw. Most of it arrives by accident, so don’t punish them for it.</p></div>
+              <div class="pc"><h4>Know what a “THC vape” is</h4><p>Dealers sell them to teenagers on Snapchat, and many contain spice. Tell your child they can always call you if a friend collapses, and you’ll come first and ask questions later.</p></div>
+              <div class="pc"><h4>Show them what you do</h4><p>Rules 1 and 2 apply to you too. Children copy what adults do far more than what adults say.</p></div>
+            </div>
+          </div>
+
+          <div class="sub">
+            <h3>Three follow-up lessons (20 minutes each)</h3>
+            <div class="follow">
+              <div class="fl f1"><span class="mono">Follow-up 1</span><h4>Our group chat rules</h4><ol><li>In small groups, list 5 things that make a group chat good and 5 that make it bad.</li><li>Merge the lists into one class charter.</li><li>Everyone signs it, and it goes up on the wall.</li></ol></div>
+              <div class="fl f2"><span class="mono">Follow-up 2</span><h4>Spot the fake friend</h4><ol><li>Show three made-up DM conversations. One is a real friend and two are groomers or scammers.</li><li>Pupils underline the warning signs: flattery, secrecy, moving apps, gifts, urgency.</li><li>Finish on how to report to CEOP.</li></ol></div>
+              <div class="fl f3"><span class="mono">Follow-up 3</span><h4>Search yourself</h4><ol><li>For homework, pupils search their own name and username with an adult.</li><li>They note what a stranger could learn about them.</li><li>Back in class, they check their privacy settings together, one app at a time.</li></ol></div>
+            </div>
+          </div>
+
+          <div class="sub">
+            <h3>Words to know</h3>
+            <dl class="gloss" id="gloss"></dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="seg sources" id="sources">
+        <div class="body">
+          <p class="eyebrow">For teachers and parents</p>
+          <h3>What this lesson draws on</h3>
+          <p>The lesson itself is new, but its structure and facts come from existing UK resources. They’re all free and worth using for follow-up work.</p>
+          <ul>
+            <li><a href="https://www.gov.uk/government/publications/education-for-a-connected-world" target="_blank" rel="noopener">UKCIS: Education for a Connected World</a>, the national framework. This lesson covers its Online reputation, Online bullying, Online relationships and Privacy strands.</li>
+            <li><a href="https://swgfl.org.uk/services/project-evolve/" target="_blank" rel="noopener">SWGfL ProjectEVOLVE</a>: free activities for every statement in that framework, used by over 15,000 schools.</li>
+            <li><a href="https://www.ceopeducation.co.uk/professionals/guidance/fmse-alert" target="_blank" rel="noopener">CEOP Education: the NCA’s financially motivated sextortion alert</a> and <a href="https://www.ceopeducation.co.uk/11_18/lets-talk-about/online-safety/reporting-nude-images/" target="_blank" rel="noopener">reporting nude images (11–18)</a>.</li>
+            <li><a href="https://www.nationalcrimeagency.gov.uk/news/nca-issues-urgent-warning-about-sextortion" target="_blank" rel="noopener">National Crime Agency: urgent warning about sextortion</a>.</li>
+            <li><a href="https://www.iwf.org.uk/our-technology/report-remove" target="_blank" rel="noopener">IWF and Childline: Report Remove</a>.</li>
+            <li><a href="https://www.college.police.uk/guidance/responding-taking-or-sharing-nude-and-semi-nude-images-young-people" target="_blank" rel="noopener">College of Policing: responding to young people sharing nude images</a> (Outcome 21).</li>
+            <li><a href="https://www.gov.uk/government/publications/online-safety-act-new-criminal-offences-circular/online-safety-act-new-criminal-offences-circular" target="_blank" rel="noopener">GOV.UK: Online Safety Act new criminal offences</a>, in force since 31 January 2024.</li>
+            <li><a href="https://www.ofcom.org.uk/news-centre/2024/encountering-violent-online-content-starts-at-primary-school" target="_blank" rel="noopener">Ofcom: encountering violent online content starts at primary school</a> (2024) and <a href="https://www.ofcom.org.uk/online-safety/protecting-children/age-checks-to-protect-children-online" target="_blank" rel="noopener">age checks to protect children online</a>.</li>
+            <li><a href="https://assets.childrenscommissioner.gov.uk/wpuploads/2023/07/CCO-Pornography-and-Young-People-1.pdf" target="_blank" rel="noopener">Children’s Commissioner: “A lot of it is actually just abuse”</a>, young people and pornography (2023).</li>
+            <li><a href="https://www.bath.ac.uk/announcements/up-to-1-in-4-vapes-confiscated-in-schools-contains-spice-and-these-are-pushed-on-social-media/" target="_blank" rel="noopener">University of Bath: spice in vapes confiscated in schools</a>, <a href="https://volteface.me/dm-details-selling-drugs-age-social-media/" target="_blank" rel="noopener">Volteface: drugs sold on social media</a>, and <a href="https://www.gov.uk/guidance/selling-vaping-and-nicotine-products" target="_blank" rel="noopener">GOV.UK: selling vaping products</a>.</li>
+            <li><a href="https://www.gov.uk/government/publications/criminal-exploitation-of-children-and-vulnerable-adults-county-lines" target="_blank" rel="noopener">GOV.UK: county lines guidance</a>.</li>
+            <li><a href="https://www.met.police.uk/cp/crime-prevention/personal-safety-how-to-stay-safe/mobile-phone-advice/" target="_blank" rel="noopener">Metropolitan Police: mobile phone advice</a>, <a href="https://www.london.gov.uk/mayor-outlines-major-crackdown-mobile-phone-theft-new-mobile-phone-theft-command-cell-and-ps45m-more" target="_blank" rel="noopener">Mayor of London: phone theft figures</a> and <a href="https://www.immobilise.com/" target="_blank" rel="noopener">Immobilise</a>.</li>
+            <li><a href="https://fullfact.org/toolkit/" target="_blank" rel="noopener">Full Fact: toolkit for spotting misinformation</a>.</li>
+            <li><a href="https://www.childnet.com/" target="_blank" rel="noopener">Childnet</a>, <a href="https://www.internetmatters.org/" target="_blank" rel="noopener">Internet Matters</a> and the <a href="https://www.nspcc.org.uk/keeping-children-safe/online-safety/" target="_blank" rel="noopener">NSPCC</a> for guides for parents.</li>
+          </ul>
+          <p class="foot">The legal summaries are simplified for 12-year-olds and are not legal advice. They describe the law in England and Wales as of September 2026. Scotland and Northern Ireland have similar offences under different laws. Everyone named in the examples is made up.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="sb-art.js"></script>
+<script src="sb-app.js"></script>
+<script src="sb-home.js"></script>
+
+
+</body>
+</html>
